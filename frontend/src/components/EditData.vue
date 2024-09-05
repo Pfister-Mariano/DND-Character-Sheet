@@ -27,41 +27,14 @@
 
 <script setup>
 import { ref, onMounted } from 'vue';
-import axios from 'axios';
+import { fetchData } from '../composables/useData.js';
+import { postData } from '../composables/useData.js';
 
-// Define reactive state
-const data = ref({
-  name: '',
-  email: '',
-  note: ''
-});
-const fileName = ref('data.json');
+const { data, fileName, loadData } = fetchData();
+onMounted(loadData);
 
-// Fetch data when the component is mounted
-const fetchData = async () => {
-  try {
-    const response = await axios.get('http://localhost:3000/api/data');
-    data.value = response.data;
-  } catch (error) {
-    console.error('Error fetching data:', error);
-  }
-};
+const { updateData } = postData();
 
-// Update data by sending it to the API
-const updateData = async () => {
-  try {
-    await axios.post('http://localhost:3000/api/data', {
-      ...data.value,
-      fileName: fileName.value
-    });
-    alert('Data updated successfully!');
-  } catch (error) {
-    console.error('Error updating data:', error);
-  }
-};
-
-// Call fetchData on component mount
-onMounted(fetchData);
 </script>
 
 <style>
