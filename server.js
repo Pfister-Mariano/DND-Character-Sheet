@@ -1,5 +1,5 @@
 const express = require('express');
-const fs = require('fs');
+const fs = require('fs').promises; // Using promises for async/await
 const path = require('path');
 const cors = require('cors');
 
@@ -7,32 +7,50 @@ const app = express();
 const port = 3000;
 
 app.use(cors({ origin: 'http://localhost:5173' }));
-app.use(express.json()); // For parsing application/json
+app.use(express.json());
 
 // Serve JSON data
-app.get('/api/data', (req, res) => {
-  const filePath = path.join(__dirname, 'data', 'data.json');
-  fs.readFile(filePath, 'utf8', (err, data) => {
-    if (err) {
-      return res.status(500).json({ error: 'Error reading data file' });
+app.get('/api/data/:filename', async (req, res) => {
+    const { filename } = req.params;
+    const filePath = path.join(__dirname, 'data', filename);
+
+    try {
+        const data = await fs.readFile(filePath, 'utf8');
+        res.json(JSON.parse(data));
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: 'Error reading data file' });
     }
-    res.json(JSON.parse(data));
-  });
+});
+
+// Additional route to list all files in the /data folder
+app.get('/api/files', async (req, res) => {
+    const dirPath = path.join(__dirname, 'data');
+
+    try {
+        const files = await fs.readdir(dirPath);
+        // res.json(files);
+        es.json(JSON.parse(files));
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: 'Error reading directory' });
+    }
 });
 
 // Update JSON data
-app.post('/api/data', (req, res) => {
-  const { fileName, ...newData } = req.body;
-  const filePath = path.join(__dirname, 'data', fileName || 'data.json');
-  
-  fs.writeFile(filePath, JSON.stringify(newData, null, 2), (err) => {
-    if (err) {
-      return res.status(500).json({ error: 'Error writing data file' });
+app.post('/api/data', async (req, res) => {
+    const { fileName, ...newData } = req.body;
+    const filePath = path.join(__dirname, 'data', fileName || 'data.json');
+
+    try {
+        await fs.writeFile(filePath, JSON.stringify(newData, null, 2));
+        res.json({ message: 'Data updated successfully' });
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: 'Error writing data file' });
     }
-    res.json({ message: 'Data updated successfully' });
-  });
 });
 
 app.listen(port, () => {
-  console.log(`Server running on http://localhost:${port}`);
+    console.log(`Server running on http://localhost:${port}`);
 });
