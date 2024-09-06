@@ -1,18 +1,17 @@
 <script setup>
   import EditData from './components/EditData.vue'
+  import { Button } from '@/components/ui/button'
 </script>
 
 <template>
-  <br>
-  <br>
-  <br>
-  <EditData/> 
+<!--   <EditData/> 
   <br>
   <br>
   <br>
   <h1 className="text-3xl font-bold underline text-sky-400">
     Hello world!
-  </h1>
+  </h1> -->
+  <Button>APP Button</Button>
 </template>
 
 <style scoped>

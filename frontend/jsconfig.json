@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+      "baseUrl": ".",  // This sets the base URL for all paths
+      "paths": {
+        "@/*": ["./src/*"]  // This sets up the alias @ to point to the src folder
+      }
+    },
+    "exclude": ["node_modules", "dist"]  // Exclude directories that shouldn't be included in the compilation
+  }
