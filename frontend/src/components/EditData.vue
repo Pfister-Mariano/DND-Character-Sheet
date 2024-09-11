@@ -44,6 +44,6 @@ onMounted(async () => {
 
 </script>
 
-<style>
+<style lang="scss" >
 /* Add some styles if needed */
 </style>

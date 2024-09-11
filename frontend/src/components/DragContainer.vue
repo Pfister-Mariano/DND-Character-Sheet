@@ -12,7 +12,7 @@ let gridColumn = ref(1);
 let gridRow = ref(1);
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 input {
     all: unset;
     font-size: 1.5rem;

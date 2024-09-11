@@ -68,7 +68,7 @@ onMounted(() => {
 });
 </script>
 
-<style scoped>
+<style scoped lang="scss" >
 .gridWrapper {
     display: grid;
     /* grid-template-columns: repeat(v-bind(gridColumnCount), minmax(0, 1fr)); */
