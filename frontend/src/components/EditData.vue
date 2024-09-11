@@ -37,8 +37,6 @@ const { data, fileName, loadData } = fetchData('luca.json');
 const { fileList, loadAllFiles } = listAllFiles();
 const { updateData } = postData();
 
-console.log(listAllFiles());
-
 onMounted(async () => {
     await loadData();
     await loadAllFiles();

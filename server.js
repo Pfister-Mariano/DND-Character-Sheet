@@ -29,8 +29,7 @@ app.get('/api/files', async (req, res) => {
 
     try {
         const files = await fs.readdir(dirPath);
-        // res.json(files);
-        es.json(JSON.parse(files));
+        res.json(files); // Corrected line
     } catch (err) {
         console.error(err);
         res.status(500).json({ error: 'Error reading directory' });
