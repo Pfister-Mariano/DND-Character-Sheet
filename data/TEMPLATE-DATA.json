@@ -1,0 +1,380 @@
+{
+    "settings": {
+        "characterView": {
+            "gridRows": 9,
+            "gridColumns": 16,
+            "contents": [
+                {
+                    "type": "",
+                    "row": 0,
+                    "columns": 0
+                },
+                {
+                    "type": "",
+                    "row": 0,
+                    "columns": 0
+                },
+                {
+                    "type": "",
+                    "row": 0,
+                    "columns": 0
+                }
+            ]
+        },
+        "backgroundView": {
+            "gridRows": 9,
+            "gridColumns": 16,
+            "contents": [
+                {
+                    "type": "",
+                    "row": 0,
+                    "columns": 0
+                },
+                {
+                    "type": "",
+                    "row": 0,
+                    "columns": 0
+                },
+                {
+                    "type": "",
+                    "row": 0,
+                    "columns": 0
+                }
+            ]
+        },
+        "battleView": {
+            "gridRows": 9,
+            "gridColumns": 16,
+            "contents": [
+                {
+                    "type": "",
+                    "row": 0,
+                    "columns": 0
+                },
+                {
+                    "type": "",
+                    "row": 0,
+                    "columns": 0
+                },
+                {
+                    "type": "",
+                    "row": 0,
+                    "columns": 0
+                }
+            ]
+        },
+        "notesView": {
+            "gridRows": 9,
+            "gridColumns": 16,
+            "contents": [
+                {
+                    "type": "",
+                    "row": 0,
+                    "columns": 0
+                },
+                {
+                    "type": "",
+                    "row": 0,
+                    "columns": 0
+                },
+                {
+                    "type": "",
+                    "row": 0,
+                    "columns": 0
+                }
+            ]
+        },
+        "customView": {
+            "gridRows": 9,
+            "gridColumns": 16,
+            "contents": [
+                {
+                    "type": "",
+                    "row": 0,
+                    "columns": 0
+                },
+                {
+                    "type": "",
+                    "row": 0,
+                    "columns": 0
+                },
+                {
+                    "type": "",
+                    "row": 0,
+                    "columns": 0
+                }
+            ]
+        }
+    },
+    "characterName": "",
+    "level": 1,
+    "class": "",
+    "race": "",
+    "background": "",
+    "proficiencyBonus": "",
+    "skills": {
+        "strength": {
+            "abilityScore": "",
+            "savingThrow": {
+                "proficient": false,
+                "expertise": false,
+                "advantage": false,
+                "disadvantage": false,
+                "extraModifier": 0
+            },
+            "athletics": {
+                "proficient": false,
+                "expertise": false,
+                "advantage": false,
+                "disadvantage": false,
+                "extraModifier": 0
+            }
+        },
+        "dexterity": {
+            "abilityScore": "",
+            "savingThrow": {
+                "proficient": false,
+                "expertise": false,
+                "advantage": false,
+                "disadvantage": false,
+                "extraModifier": 0
+            },
+            "acrobatics": {
+                "proficient": false,
+                "expertise": false,
+                "advantage": false,
+                "disadvantage": false,
+                "extraModifier": 0
+            },
+            "sleightOfHand": {
+                "proficient": false,
+                "expertise": false,
+                "advantage": false,
+                "disadvantage": false,
+                "extraModifier": 0
+            },
+            "stealth": {
+                "proficient": false,
+                "expertise": false,
+                "advantage": false,
+                "disadvantage": false,
+                "extraModifier": 0
+            }
+        },
+        "constitution": {
+            "abilityScore": "",
+            "savingThrow": {
+                "proficient": false,
+                "expertise": false,
+                "advantage": false,
+                "disadvantage": false,
+                "extraModifier": 0
+            }
+        },
+        "intelligence": {
+            "abilityScore": "",
+            "savingThrow": {
+                "proficient": false,
+                "expertise": false,
+                "advantage": false,
+                "disadvantage": false,
+                "extraModifier": 0
+            },
+            "arcana": {
+                "proficient": false,
+                "expertise": false,
+                "advantage": false,
+                "disadvantage": false,
+                "extraModifier": 0
+            },
+            "history": {
+                "proficient": false,
+                "expertise": false,
+                "advantage": false,
+                "disadvantage": false,
+                "extraModifier": 0
+            },
+            "investigation": {
+                "proficient": false,
+                "expertise": false,
+                "advantage": false,
+                "disadvantage": false,
+                "extraModifier": 0
+            },
+            "medicine": {
+                "proficient": false,
+                "expertise": false,
+                "advantage": false,
+                "disadvantage": false,
+                "extraModifier": 0
+            },
+            "religion": {
+                "proficient": false,
+                "expertise": false,
+                "advantage": false,
+                "disadvantage": false,
+                "extraModifier": 0
+            }
+        },
+        "wisdom": {
+            "abilityScore": "",
+            "savingThrow": {
+                "proficient": false,
+                "expertise": false,
+                "advantage": false,
+                "disadvantage": false,
+                "extraModifier": 0
+            },
+            "animalHandling": {
+                "proficient": false,
+                "expertise": false,
+                "advantage": false,
+                "disadvantage": false,
+                "extraModifier": 0
+            },
+            "insight": {
+                "proficient": false,
+                "expertise": false,
+                "advantage": false,
+                "disadvantage": false,
+                "extraModifier": 0
+            },
+            "nature": {
+                "proficient": false,
+                "expertise": false,
+                "advantage": false,
+                "disadvantage": false,
+                "extraModifier": 0
+            },
+            "perception": {
+                "proficient": false,
+                "expertise": false,
+                "advantage": false,
+                "disadvantage": false,
+                "extraModifier": 0
+            },
+            "survival": {
+                "proficient": false,
+                "expertise": false,
+                "advantage": false,
+                "disadvantage": false,
+                "extraModifier": 0
+            }
+        },
+        "charisma": {
+            "abilityScore": "",
+            "savingThrow": {
+                "proficient": false,
+                "expertise": false,
+                "advantage": false,
+                "disadvantage": false,
+                "extraModifier": 0
+            },
+            "deception": {
+                "proficient": false,
+                "expertise": false,
+                "advantage": false,
+                "disadvantage": false,
+                "extraModifier": 0
+            },
+            "intimidation": {
+                "proficient": false,
+                "expertise": false,
+                "advantage": false,
+                "disadvantage": false,
+                "extraModifier": 0
+            },
+            "performance": {
+                "proficient": false,
+                "expertise": false,
+                "advantage": false,
+                "disadvantage": false,
+                "extraModifier": 0
+            },
+            "persuasion": {
+                "proficient": false,
+                "expertise": false,
+                "advantage": false,
+                "disadvantage": false,
+                "extraModifier": 0
+            }
+        }
+    },
+    "health": {
+        "maxHP": "",
+        "currentHP": "",
+        "tempHP": ""
+    },
+    "ac": "",
+    "initiative": "",
+    "sanity": "",
+    "exhaustion": "",
+    "speed": {
+        "walking": "",
+        "climbing": "",
+        "swimming": "",
+        "fly": ""
+    },
+    "spellcasting": {
+        "castingSkill": "",
+        "currentMana": "",
+        "maxMana": "",
+        "spellAtkBonus": "",
+        "spellSaveDC": ""
+    },
+    "resistances": ["", ""],
+    "immunities": ["", ""],
+    "conditionImmunities": ["", ""],
+    "vulnerability": ["", ""],
+    "passiveAbilities": {
+        "": ""
+    },
+    "wealth": {
+        "platinum": 0,
+        "gold": 0,
+        "silver": 0,
+        "copper": 0
+    },
+    "rations": {
+        "wealthy": 0,
+        "comfortable": 0,
+        "whack": 0
+    },
+    "sanityGain": ["", "", ""],
+    "sanityLoss": ["", "", ""],
+    "proficiencies": {
+        "weapons": ["", ""],
+        "armor": ["", ""],
+        "tools": ["", ""],
+        "languages": ["", ""]
+    },
+    "inventory": {
+        "weapons": { "": "" },
+        "cloths": {
+            "helmet": "",
+            "armor": "",
+            "shield": "",
+            "cloths": "",
+            "shoes": ""
+        },
+        "accessories": ["", ""],
+        "backpack": ["", "", ""]
+    },
+    "abilities": [
+        {
+            "name": "",
+            "useTime": "",
+            "description": "",
+            "levelRequirement": ""
+        }
+    ],
+    "spells": [
+        {
+            "name": "",
+            "level": 1,
+            "castingTime": "",
+            "description": ""
+        }
+    ],
+    "editorContent": [{}, {}, {}]
+}

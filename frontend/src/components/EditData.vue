@@ -24,6 +24,8 @@
         <pre>{{ data }}</pre>
         <br><br><br><br>
         <pre>{{ fileList }}</pre>
+        <br><br><br><br>
+        <section style="height: 500px;width: 500px;background-color: gray;" id="editorjs"></section>
     </div>
 </template>
 
@@ -32,6 +34,10 @@ import { onMounted } from 'vue';
 import { fetchData } from '../composables/useData.js';
 import { postData } from '../composables/useData.js';
 import { listAllFiles } from '../composables/useData.js';
+
+import EditorJS from '@editorjs/editorjs';
+import Header from '@editorjs/header'; 
+import List from '@editorjs/list'; 
 
 const { data, fileName, loadData } = fetchData('luca.json');
 const { fileList, loadAllFiles } = listAllFiles();
@@ -42,8 +48,23 @@ onMounted(async () => {
     await loadAllFiles();
 });
 
+const editor = new EditorJS({
+    /**
+     * Id of Element that should contain the Editor
+     */
+    holderId: 'editorjs',
+
+    /**
+     * Previously saved data that should be rendered
+     */
+    tools: {
+        header: Header,
+        list: List
+    },
+});
+
 </script>
 
-<style lang="scss" >
+<style lang="scss">
 /* Add some styles if needed */
 </style>
