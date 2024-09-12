@@ -1,7 +1,7 @@
 <template>
     <div>
         <h1>Edit Data</h1>
-        <form @submit.prevent="updateData">
+        <form @submit.prevent="saveData">
             <label for="name">Name:</label>
             <input v-model="data.name" id="name" type="text" />
             <br><br>
@@ -41,7 +41,7 @@ import List from '@editorjs/list';
 
 const { data, fileName, loadData } = fetchData('luca.json');
 const { fileList, loadAllFiles } = listAllFiles();
-const { updateData } = postData();
+const { saveData } = postData();
 
 onMounted(async () => {
     await loadData();

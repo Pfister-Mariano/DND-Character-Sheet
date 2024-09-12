@@ -1,87 +1,115 @@
 <template>
-    <Button @click="switchDraggable()">Switch draggable disable</Button>
-    <br><br>
-    <br><br>
-    <input type="number" v-model="gridColumnCount">
-    <br><br>
-    <br><br>
-    <div class="gridWrapper" ref="sortingList"
-        :style="{ 'grid-template-columns': 'repeat(' + gridColumnCount + ', minmax(0, 1fr))' }">
-        <DragContainer v-for="(item, index) in 8">
-            {{ index + 1 }}
-        </DragContainer>
-    </div>
+    <Tabs default-value="tab-characterView" class="tab">
+        <TabsList class="tabList">
+            <TabsTrigger class="tabTrigger" v-for="(view, index) in characterData.views" :key="index" :value="`tab-${index}`">
+                {{ view.name }}
+            </TabsTrigger>
+        </TabsList>
+        <TabsContent class="tabContent" v-for="(view, index) in characterData.views" :key="index" :value="`tab-${index}`">
+            <viewGrid 
+            :gridRows="view.gridRows" 
+            :gridColumns="view.gridColumns"
+            @update:gridColumnSize="(value) => updateGridView(index, itemIndex, 'gridColumns', value)"
+            @update:gridRowSize="(value) => updateGridView(index, itemIndex, 'gridRows', value)"
+            >
+                <gridContainer 
+                    v-for="(item, itemIndex) in view.contents"
+                    :key="itemIndex"
+                    :columnSize="item.columns"
+                    :rowSize="item.row"
+                    @update:columnSize="(value) => updateViewContent(index, itemIndex, 'columns', value)"
+                    @update:rowSize="(value) => updateViewContent(index, itemIndex, 'row', value)"
+                    >
+                        <component
+                            :key="itemIndex"
+                            :is="componentMap[item.type]"
+                            :characterData="characterData.character"
+                            @update:characterData="(value) => updateCharacterData(index, itemIndex, 'row', value)"
+                        />
+                </gridContainer>
+            </viewGrid>
+        </TabsContent>
+    </Tabs>
+
+    <button @click="saveCharacterData">SAVE Character Sheet</button>
     <br>
     <br>
     <br>
-    <br>
-    <EditData/>
+    <pre>{{ fileList }}</pre>
+    <pre>
+        {{ characterData }}
+    </pre>
 </template>
 
 <script setup>
-import EditData from './components/EditData.vue'
-import DragContainer from './components/DragContainer.vue'
-import { Button } from '@/components/ui/button'
-import { onMounted, ref, useTemplateRef } from "vue";
+import { ref, onMounted, watch } from 'vue';
 
-import Sortable from 'sortablejs';
+import { fetchData } from './composables/useData.js';
+import { postData } from './composables/useData.js';
+import { listAllFiles } from './composables/useData.js';
 
-let gridColumnCount = ref(4);
+import componentMap from './composables/componentMap.js';
+import viewGrid from './components/viewGrid.vue';
+import gridContainer from './components/gridContainer.vue';
 
-let gridSortingList = useTemplateRef('sortingList');
-let sortingList = ref(null);
-let sortableList;
+import {
+    Tabs,
+    TabsContent,
+    TabsList,
+    TabsTrigger,
+} from '@/components/ui/tabs';
 
-function switchDraggable() {
-    if (sortableList) {
-        let state = sortableList.option("disabled"); // get current state
-        sortableList.option("disabled", !state); // toggle state
-    }
+const { data, loadData } = fetchData();
+const { fileList, loadAllFiles } = listAllFiles();
+const { saveData } = postData();
+
+const characterData = ref({});
+const filename = `${getQueryParam('character')}.json`;  // Extract filename or default to 'gargamel.json'
+
+function getQueryParam(param) {
+    const params = new URLSearchParams(window.location.search);
+    return params.get(param);
 }
 
-onMounted(() => {
-    sortableList = new Sortable(gridSortingList.value, {
-        swapThreshold: 0.60,
-        animation: 150,
-        disabled: false,
-        store: {
-            /**
-             * Get the order of elements. Called once during initialization.
-             * @param   {Sortable}  sortable
-             * @returns {Array}
-             */
-            get: function (sortable) {
-                var order = localStorage.getItem(sortable.options.group.name);
-                return order ? order.split('|') : [];
-            },
-
-            /**
-             * Save the order of elements. Called onEnd (when the item is dropped).
-             * @param {Sortable}  sortable
-             */
-            set: function (sortable) {
-                var order = sortable.toArray();
-                localStorage.setItem(sortable.options.group.name, order.join('|'));
-            }
-        }
-    });
+onMounted(async () => {
+    await loadData(filename);  // Pass filename to loadData()
+    await loadAllFiles();
+    characterData.value = data.value;
 });
+
+function updateViewContent(index, itemIndex, key, value) {
+    characterData.value.views[index].contents[itemIndex][key] = value;
+}
+
+function updateGridView(index, itemIndex, key, value) {
+    characterData.value.views[index][key] = value;
+    console.log(index, key, value);
+    console.log(characterData.value.views[index][key]);
+}
+
+function updateCharacterData(index, itemIndex, key, value) {
+    characterData.character = value;
+    console.log('changed character data');
+    // saveCharacterData();
+}
+
+function saveCharacterData() {
+    data.value = characterData.value;
+    saveData(filename);
+}
+
+
+/************************************** */
+// function addTestComp() {
+//     let addedStats =    {
+//         "type": "Spellcasting",
+//         "row": 7,
+//         "columns": 2
+//     }     
+//     characterData.value.views['characterView'].contents.push(addedStats)
+// }
+/************************************** */
+
 </script>
 
-<style scoped lang="scss" >
-.gridWrapper {
-    display: grid;
-    /* grid-template-columns: repeat(v-bind(gridColumnCount), minmax(0, 1fr)); */
-    grid-template-rows: repeat(3, minmax(0, 1fr));
-    gap: 1rem;
-    width: 100%;
-    background-color: rgb(174 187 215);
-    font-size: 2rem;
-}
-
-.gridWrapper>div {
-    background: darkred;
-    min-height: 150px;
-    width: auto;
-}
-</style>
+<style scoped lang="scss"></style>

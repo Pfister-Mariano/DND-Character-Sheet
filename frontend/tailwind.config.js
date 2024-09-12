@@ -3,8 +3,6 @@ const animate = require("tailwindcss-animate")
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ["class"],
-  safelist: ["dark"],
-  prefix: "",
   
   content: [
     './pages/**/*.{js,jsx,vue}',
@@ -55,6 +53,10 @@ module.exports = {
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
+        },
+        customColor: {
+          DEFAULT: "#ff0000", // Example custom color
+          foreground: "#00ff00", // Example custom foreground color
         },
       },
       borderRadius: {

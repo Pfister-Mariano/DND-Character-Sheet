@@ -29,7 +29,7 @@ app.get('/api/files', async (req, res) => {
 
     try {
         const files = await fs.readdir(dirPath);
-        res.json(files); // Corrected line
+        res.json(files);
     } catch (err) {
         console.error(err);
         res.status(500).json({ error: 'Error reading directory' });
@@ -38,8 +38,8 @@ app.get('/api/files', async (req, res) => {
 
 // Update JSON data
 app.post('/api/data', async (req, res) => {
-    const { fileName, ...newData } = req.body;
-    const filePath = path.join(__dirname, 'data', fileName || 'data.json');
+    const { fileName, ...newData } = req.body; // fileName (capital N) is expected here
+    const filePath = path.join(__dirname, 'data', fileName || 'data.json'); // Uses fileName here
 
     try {
         await fs.writeFile(filePath, JSON.stringify(newData, null, 2));

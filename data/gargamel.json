@@ -2,25 +2,26 @@
   "views": {
     "characterView": {
       "name": "Character",
-      "gridRows": 9,
-      "gridColumns": 16,
+      "gridRows": 3,
+      "gridColumns": 2,
       "contents": [
         {
           "type": "Skills",
-          "row": 0,
-          "columns": 0
+          "row": 1,
+          "columns": 1
         },
         {
           "type": "Health",
-          "row": 0,
-          "columns": 0
+          "row": 1,
+          "columns": 1
         },
         {
           "type": "",
-          "row": 0,
-          "columns": 0
+          "row": 1,
+          "columns": 1
         }
-      ]
+      ],
+      "columns": 5
     },
     "backgroundView": {
       "name": "Background",
@@ -29,18 +30,18 @@
       "contents": [
         {
           "type": "",
-          "row": 0,
-          "columns": 0
+          "row": 1,
+          "columns": 1
         },
         {
           "type": "",
-          "row": 0,
-          "columns": 0
+          "row": 1,
+          "columns": 1
         },
         {
           "type": "",
-          "row": 0,
-          "columns": 0
+          "row": 1,
+          "columns": 1
         }
       ]
     },
@@ -51,18 +52,18 @@
       "contents": [
         {
           "type": "",
-          "row": 0,
-          "columns": 0
+          "row": 1,
+          "columns": 1
         },
         {
           "type": "",
-          "row": 0,
-          "columns": 0
+          "row": 1,
+          "columns": 1
         },
         {
           "type": "",
-          "row": 0,
-          "columns": 0
+          "row": 1,
+          "columns": 1
         }
       ]
     },
@@ -78,13 +79,13 @@
         },
         {
           "type": "Spellcasting",
-          "row": 0,
-          "columns": 0
+          "row": 1,
+          "columns": 1
         },
         {
           "type": "Health",
-          "row": 0,
-          "columns": 0
+          "row": 1,
+          "columns": 1
         }
       ]
     },
@@ -95,25 +96,25 @@
       "contents": [
         {
           "type": "",
-          "row": 0,
-          "columns": 0
+          "row": 1,
+          "columns": 1
         },
         {
           "type": "",
-          "row": 0,
-          "columns": 0
+          "row": 1,
+          "columns": 1
         },
         {
           "type": "",
-          "row": 0,
-          "columns": 0
+          "row": 1,
+          "columns": 1
         }
       ]
     }
   },
   "character": {
     "characterName": "",
-    "level": 243,
+    "level": 51,
     "class": "",
     "race": "",
     "background": "",
@@ -428,6 +429,5 @@
       {},
       {}
     ]
-  },
-  "filename": "gargamel.json"
+  }
 }
