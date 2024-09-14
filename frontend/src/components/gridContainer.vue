@@ -12,7 +12,7 @@
         /><br>
         {{ localColumnSize }} {{ localRowSize }} 
         
-        <slot></slot>
+        <!-- <slot></slot> -->
     </article>
 </template>
 

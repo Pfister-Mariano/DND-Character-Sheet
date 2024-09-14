@@ -60,5 +60,6 @@ function updateGridRowSize(event) {
 <style scoped lang="scss">
     main{
         display: grid;
+        // background-color: var(--colorBgCustom);
     }
 </style>

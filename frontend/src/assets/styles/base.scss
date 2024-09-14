@@ -1,10 +1,107 @@
+@font-face {
+    font-family: "Inter";
+    src: url("../fonts/Inter-Regular.woff");
+    font-display: swap;
+    font-weight: 400;
+}
+@font-face {
+    font-family: "Inter";
+    src: url("../fonts/Inter-Italic.woff");
+    font-display: swap;
+    font-weight: 400;
+    font-style: italic;
+}
+@font-face {
+    font-family: "Inter";
+    src: url("../fonts/Inter-Medium.woff");
+    font-display: swap;
+    font-weight: 500;
+}
+@font-face {
+    font-family: "Inter";
+    src: url("../fonts/Inter-MediumItalic.woff");
+    font-display: swap;
+    font-weight: 500;
+    font-style: italic;
+}
+@font-face {
+    font-family: "Inter";
+    src: url("../fonts/Inter-SemiBold.woff");
+    font-display: swap;
+    font-weight: 600;
+}
+@font-face {
+    font-family: "Inter";
+    src: url("../fonts/Inter-SemiBoldItalic.woff");
+    font-display: swap;
+    font-weight: 600;
+    font-style: italic;
+}
+@font-face {
+    font-family: "Inter";
+    src: url("../fonts/fonts/Inter-Bold.woff");
+    font-display: swap;
+    font-weight: 700;
+}
+@font-face {
+    font-family: "Inter";
+    src: url("../fonts/Inter-BoldItalic.woff");
+    font-display: swap;
+    font-weight: 700;
+    font-style: italic;
+}
+:root {
+    font-family: "Inter", Arial, Helvetica, sans-serif;
+
+    --colorWhite: #ffffff;
+    --colorBG1: #171717;
+    --colorBG2: #27272a;
+    --colorBG3: #3f3f46;
+    --colorBlueDark: #0e7490;
+    --colorBlueLight: #06b6d4;
+    --colorAdvantage: #22c55e;
+    --colorDisadvantage: #dc2626;
+    --colorWealth: #514931;
+    --colorRations: #2e4b3c;
+    --colorSanityGain: #382b51;
+    --colorSanityLoss: #4f2d30;
+
+    --fontSizeBody: 12px;
+    --fontSizeLead: 14px;
+    --fontSizeH1: 42px;
+    --fontSizeH2: 30px;
+    --fontSizeH3: 24px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+    position: relative;
+}
+
+body {
+    background-color: var(--colorBG1);
+    color: var(--colorWhite);
+}
+
+input,
+textarea {
+    all: unset;
+}
+
 .tab,
-.tabList,
-.tabContent,
-.tabTrigger {
+.tabContent {
     width: 100%;
 }
-.tabContentWrapper {
-    background-color: red;
-    width: 100%;
+
+.tabTrigger,
+.tabList {
+    background-color: var(--colorBG2);
+    color: var(--colorWhite);
+}
+.tabTrigger[data-active="true"] {
+    background-color: var(--colorBlueDark);
+    color: var(--colorWhite);
 }
