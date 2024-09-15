@@ -1,6 +1,6 @@
 <template>
     <section>
-        SKILLS
+        PASSIVE
     </section>
 </template>
 

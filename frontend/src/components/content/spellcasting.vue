@@ -1,10 +1,5 @@
 <template>
     <section>
-        <input 
-            type="number" 
-            v-model="localCharacter.level" 
-            @input="updateCharacterData" 
-        /><br>
         SPELLCASTING 
     </section>
 </template>

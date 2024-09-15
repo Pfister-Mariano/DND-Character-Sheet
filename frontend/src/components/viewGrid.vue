@@ -2,16 +2,27 @@
     <main :style="{ 
         'grid-template-columns': 'repeat( ' + props.gridColumns + ', minmax(0, 1fr))', 
         'grid-template-rows': 'repeat( ' + props.gridRows + ', minmax(0, 1fr))'}">
-        VIEW Columns: <input 
-            type="number" 
-            v-model="props.gridColumns" 
-            @input="updateGridColumnSize" 
-        /><br>
-        VIEW Rows: <input 
-            type="number" 
-            v-model="props.gridRows" 
-            @input="updateGridRowSize" 
-        />
+
+        <div class="viewGridSettings">
+            <div>
+                <span>Columns: </span>
+                <input 
+                    type="number" 
+                    v-model="localGridColumnSize" 
+                    @input="updateGridColumnSize" 
+                />
+            </div>
+            <div>
+                <span>Rows: </span>
+                <input 
+                    type="number" 
+                    v-model="localGridRowSize" 
+                    @input="updateGridRowSize" 
+                />
+            </div>
+        </div>
+
+        
         <slot></slot>
     </main>
 </template>

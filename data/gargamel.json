@@ -3,22 +3,22 @@
     "characterView": {
       "name": "Character",
       "gridRows": 3,
-      "gridColumns": 2,
+      "gridColumns": 3,
       "contents": [
         {
           "type": "Skills",
-          "row": 1,
+          "row": 2,
           "columns": 1
         },
         {
           "type": "Health",
-          "row": 1,
+          "row": 2,
           "columns": 1
         },
         {
           "type": "",
           "row": 1,
-          "columns": 1
+          "columns": 3
         }
       ],
       "columns": 5
@@ -113,12 +113,12 @@
     }
   },
   "character": {
-    "characterName": "",
-    "level": 51,
-    "class": "",
-    "race": "",
-    "background": "",
-    "proficiencyBonus": "",
+    "characterName": "Gargamel",
+    "level": "20",
+    "class": "Necromancer",
+    "race": "Vampire",
+    "background": "Custom Lineage",
+    "proficiencyBonus": 2,
     "skills": {
       "strength": {
         "abilityScore": "",

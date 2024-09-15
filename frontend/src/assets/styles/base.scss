@@ -3,6 +3,7 @@
     src: url("../fonts/Inter-Regular.woff");
     font-display: swap;
     font-weight: 400;
+    font-style: normal;
 }
 @font-face {
     font-family: "Inter";
@@ -16,6 +17,7 @@
     src: url("../fonts/Inter-Medium.woff");
     font-display: swap;
     font-weight: 500;
+    font-style: normal;
 }
 @font-face {
     font-family: "Inter";
@@ -29,6 +31,7 @@
     src: url("../fonts/Inter-SemiBold.woff");
     font-display: swap;
     font-weight: 600;
+    font-style: normal;
 }
 @font-face {
     font-family: "Inter";
@@ -37,21 +40,11 @@
     font-weight: 600;
     font-style: italic;
 }
-@font-face {
-    font-family: "Inter";
-    src: url("../fonts/fonts/Inter-Bold.woff");
-    font-display: swap;
-    font-weight: 700;
-}
-@font-face {
-    font-family: "Inter";
-    src: url("../fonts/Inter-BoldItalic.woff");
-    font-display: swap;
-    font-weight: 700;
-    font-style: italic;
-}
+
 :root {
     font-family: "Inter", Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    line-height: 1.3em;
 
     --colorWhite: #ffffff;
     --colorBG1: #171717;
@@ -71,6 +64,8 @@
     --fontSizeH1: 42px;
     --fontSizeH2: 30px;
     --fontSizeH3: 24px;
+
+    --transition: all 0.2s ease-in-out;
 }
 
 * {
@@ -79,6 +74,7 @@
     border: 0;
     box-sizing: border-box;
     position: relative;
+    line-height: 1.3em;
 }
 
 body {
@@ -91,6 +87,41 @@ textarea {
     all: unset;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+h1{
+    font-size: 3rem;
+    font-weight: 600;
+    margin: .5em 0;
+}
+h2{
+    font-size: 2.25rem;
+    font-weight: 600;
+}
+h3{
+    font-size: 1.75rem;
+    font-weight: 600;
+}
+h4{
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+h5{
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+h6{
+    font-weight: 600;
+}
+
 .tab,
 .tabContent {
     width: 100%;
@@ -101,7 +132,153 @@ textarea {
     background-color: var(--colorBG2);
     color: var(--colorWhite);
 }
+
 .tabTrigger[data-active="true"] {
     background-color: var(--colorBlueDark);
     color: var(--colorWhite);
+}
+
+.tabList {
+    padding: 5px 10px;
+    height: max-content;
+}
+
+.tab.editViewGrid article > section{
+    opacity: 1;
+    pointer-events: all;
+}
+
+.tab.editViewGrid article > section{
+    opacity: 0;
+    pointer-events: none;
+}
+.tab.editViewGrid .viewGridSettings,
+.tab.editViewGrid .containerSettings {
+    pointer-events: all;
+    opacity: 1;
+}
+
+.tabWrapper {
+    display: flex;
+    gap: 20px;
+    font-weight: 500;
+    .generalInfo {
+        display: flex;
+        padding: 5px 10px;
+        background-color: var(--colorBG2);
+        border-radius: 6px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px;
+        > div {
+            background-color: var(--colorBG3);
+            padding: 5px 10px;
+            border-radius: 6px;
+            > span {
+                color: var(--colorBlueLight);
+            }
+        }
+        .infoLevel input {
+            width: 25px;
+        }
+        .infoClass input {
+            width: 130px;
+        }
+        .infoRace input {
+            width: 100px;
+        }
+        .infoBackground input {
+            width: 130px;
+        }
+        .infoProfBonus input {
+            width: 15px;
+        }
+    }
+    .settings {
+        background-color: var(--colorBG2);
+        color: var(--colorBlueLight);
+        height: 40px;
+        width: 50px;
+        padding: 5px 10px;
+        border-radius: 6px;
+        transition: var(--transition);
+        cursor: pointer;
+
+        &.active,
+        &:hover {
+            color: var(--colorWhite);
+            background-color: #0e7490;
+        }
+    }
+}
+.tabContent {
+    margin-top: 60px;
+    .viewGridSettings {
+        background-color: var(--colorBG2);
+        padding: 5px 10px;
+        border-radius: 6px;
+        display: flex;
+        flex-direction: row;
+        font-weight: 500;
+        gap: 10px;
+
+        z-index: 4;
+        position: absolute;
+        left: 0;
+        top: -55px;
+
+        > div {
+            background-color: var(--colorBG3);
+            padding: 5px 10px;
+            border-radius: 6px;
+            height: max-content;
+            span {
+                color: var(--colorBlueLight);
+            }
+            input {
+                width: 25px;
+            }
+        }
+    }
+    article {
+        background-color: var(--colorBG2);
+        padding: 20px;
+        border-radius: 6px;
+        min-height: 150px;
+        min-width: 150px;
+        .containerSettings {
+            pointer-events: none;
+            opacity: 0;
+            transition: var(--transition);
+            z-index: 100;
+
+            height: max-content;
+            width: max-content;
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            > div {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                background-color: var(--colorBG3);
+                padding: 5px 10px;
+                border-radius: 6px;
+                span {
+                    color: var(--colorBlueLight);
+                    font-weight: 500;
+                }
+                input {
+                    width: 60px;
+                }
+            }
+        }
+    }
 }

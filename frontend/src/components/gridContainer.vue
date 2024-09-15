@@ -1,18 +1,26 @@
 <template>
     <article :style="{ 'grid-column': 'auto / span ' + localColumnSize, 'grid-row': 'auto / span ' + localRowSize }">
-        Columns: <input 
-            type="number" 
-            v-model="localColumnSize" 
-            @input="updateColumnSize" 
-        /><br>
-        Rows: <input 
-            type="number" 
-            v-model="localRowSize" 
-            @input="updateRowSize" 
-        /><br>
-        {{ localColumnSize }} {{ localRowSize }} 
-        
-        <!-- <slot></slot> -->
+        <div class="containerSettings">
+            <div>
+                <span>Columns</span>
+                <input 
+                    type="number" 
+                    v-model="localColumnSize" 
+                    @input="updateColumnSize" 
+                />
+            </div>
+            <div>
+                <span>Rows</span>
+                <input 
+                    type="number" 
+                    v-model="localRowSize" 
+                    @input="updateRowSize" 
+                />
+            </div>
+        </div>
+        <section>
+            <slot></slot>
+        </section>
     </article>
 </template>
 

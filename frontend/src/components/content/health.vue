@@ -1,10 +1,10 @@
 <template>
     <section>
-        <input 
+        <!-- <input 
             type="number" 
             v-model="localCharacter.level" 
             @input="updateCharacterData" 
-        /><br>
+        /><br> -->
         HEALTH
     </section>
 </template>
