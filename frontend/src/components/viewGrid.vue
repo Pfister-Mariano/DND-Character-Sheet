@@ -3,7 +3,7 @@
         'grid-template-columns': 'repeat( ' + props.gridColumns + ', minmax(0, 1fr))', 
         'grid-template-rows': 'repeat( ' + props.gridRows + ', minmax(0, 1fr))'}">
 
-        <div class="viewGridSettings">
+<div class="viewGridSettings">
             <div>
                 <span>Columns: </span>
                 <input 
@@ -21,7 +21,6 @@
                 />
             </div>
         </div>
-
         
         <slot></slot>
     </main>
@@ -69,8 +68,4 @@ function updateGridRowSize(event) {
 </script>
 
 <style scoped lang="scss">
-    main{
-        display: grid;
-        // background-color: var(--colorBgCustom);
-    }
 </style>

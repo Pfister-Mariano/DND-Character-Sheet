@@ -2,23 +2,48 @@
   "views": {
     "characterView": {
       "name": "Character",
-      "gridRows": 3,
-      "gridColumns": 3,
+      "gridRows": 9,
+      "gridColumns": 16,
       "contents": [
         {
           "type": "Skills",
-          "row": 2,
-          "columns": 1
+          "row": 9,
+          "columns": 4
         },
         {
           "type": "Health",
-          "row": 2,
-          "columns": 1
+          "row": 3,
+          "columns": 2
         },
         {
-          "type": "",
-          "row": 1,
-          "columns": 3
+          "type": "Inventory",
+          "row": 9,
+          "columns": 5
+        },
+        {
+          "type": "Sanity",
+          "row": 2,
+          "columns": 5
+        },
+        {
+          "type": "Proficiencies",
+          "row": 3,
+          "columns": 5
+        },
+        {
+          "type": "Spellcasting",
+          "row": 3,
+          "columns": 2
+        },
+        {
+          "type": "Abilities",
+          "row": 4,
+          "columns": 5
+        },
+        {
+          "type": "Passive",
+          "row": 3,
+          "columns": 2
         }
       ],
       "columns": 5
