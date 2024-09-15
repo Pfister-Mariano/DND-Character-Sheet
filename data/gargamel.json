@@ -2,6 +2,18 @@
   "views": {
     "characterView": {
       "name": "Character",
+      "id": "character",
+      "sortable": [
+        "3yx",
+        "35y",
+        "356",
+        "3cy",
+        "364",
+        "3jr",
+        "3i5",
+        "3be",
+        "37z"
+      ],
       "gridRows": 9,
       "gridColumns": 16,
       "contents": [
@@ -50,6 +62,8 @@
     },
     "backgroundView": {
       "name": "Background",
+      "id": "background",
+      "sortable": [],
       "gridRows": 9,
       "gridColumns": 16,
       "contents": [
@@ -72,6 +86,8 @@
     },
     "battleView": {
       "name": "Battle",
+      "id": "battle",
+      "sortable": [],
       "gridRows": 9,
       "gridColumns": 16,
       "contents": [
@@ -94,6 +110,8 @@
     },
     "notesView": {
       "name": "Notes",
+      "id": "notes",
+      "sortable": [],
       "gridRows": 9,
       "gridColumns": 16,
       "contents": [
@@ -116,6 +134,8 @@
     },
     "customView": {
       "name": "Custom",
+      "id": "custom",
+      "sortable": [],
       "gridRows": 9,
       "gridColumns": 16,
       "contents": [
