@@ -25,7 +25,7 @@
 </template>
 
 <script setup>
-import { defineProps, ref, watch, defineEmits } from 'vue';
+import { ref, watch } from 'vue';
 
 // Define props with correct types
 const props = defineProps({

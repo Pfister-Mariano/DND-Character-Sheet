@@ -15,7 +15,7 @@
         "37z"
       ],
       "gridRows": 9,
-      "gridColumns": 120,
+      "gridColumns": 16,
       "contents": [
         {
           "type": "Skills",
@@ -166,25 +166,30 @@
     "proficiencyBonus": 2,
     "skills": {
       "strength": {
-        "abilityScore": "",
+        "abilityName": "Strength",
+        "abilityScore": "20",
         "savingThrow": {
-          "proficient": false,
+          "skillName": "Str. Saving Throw",
+          "proficient": true,
           "expertise": false,
           "advantage": false,
           "disadvantage": false,
           "extraModifier": 0
         },
         "athletics": {
-          "proficient": false,
-          "expertise": false,
+          "skillName": "Athletics",
+          "proficient": true,
+          "expertise": true,
           "advantage": false,
           "disadvantage": false,
           "extraModifier": 0
         }
       },
       "dexterity": {
-        "abilityScore": "",
+        "abilityName": "Dexterity",
+        "abilityScore": "8",
         "savingThrow": {
+          "skillName": "Dex. Saving Throw",
           "proficient": false,
           "expertise": false,
           "advantage": false,
@@ -192,6 +197,7 @@
           "extraModifier": 0
         },
         "acrobatics": {
+          "skillName": "Acrobatics",
           "proficient": false,
           "expertise": false,
           "advantage": false,
@@ -199,6 +205,7 @@
           "extraModifier": 0
         },
         "sleightOfHand": {
+          "skillName": "Sleight of Hand",
           "proficient": false,
           "expertise": false,
           "advantage": false,
@@ -206,6 +213,7 @@
           "extraModifier": 0
         },
         "stealth": {
+          "skillName": "Stealth",
           "proficient": false,
           "expertise": false,
           "advantage": false,
@@ -214,8 +222,10 @@
         }
       },
       "constitution": {
-        "abilityScore": "",
+        "abilityName": "Constitution",
+        "abilityScore": "12",
         "savingThrow": {
+          "skillName": "Const. Saving Throw",
           "proficient": false,
           "expertise": false,
           "advantage": false,
@@ -224,8 +234,10 @@
         }
       },
       "intelligence": {
-        "abilityScore": "",
+        "abilityName": "Intelligence",
+        "abilityScore": "11",
         "savingThrow": {
+          "skillName": "Int. Saving Throw",
           "proficient": false,
           "expertise": false,
           "advantage": false,
@@ -233,6 +245,7 @@
           "extraModifier": 0
         },
         "arcana": {
+          "skillName": "Arcana",
           "proficient": false,
           "expertise": false,
           "advantage": false,
@@ -240,6 +253,7 @@
           "extraModifier": 0
         },
         "history": {
+          "skillName": "History",
           "proficient": false,
           "expertise": false,
           "advantage": false,
@@ -247,6 +261,7 @@
           "extraModifier": 0
         },
         "investigation": {
+          "skillName": "Investigation",
           "proficient": false,
           "expertise": false,
           "advantage": false,
@@ -254,6 +269,7 @@
           "extraModifier": 0
         },
         "medicine": {
+          "skillName": "Medicine",
           "proficient": false,
           "expertise": false,
           "advantage": false,
@@ -261,6 +277,7 @@
           "extraModifier": 0
         },
         "religion": {
+          "skillName": "Religion",
           "proficient": false,
           "expertise": false,
           "advantage": false,
@@ -269,8 +286,10 @@
         }
       },
       "wisdom": {
-        "abilityScore": "",
+        "abilityName": "Wisodm",
+        "abilityScore": "14",
         "savingThrow": {
+          "skillName": "",
           "proficient": false,
           "expertise": false,
           "advantage": false,
@@ -278,6 +297,7 @@
           "extraModifier": 0
         },
         "animalHandling": {
+          "skillName": "Animal Handling",
           "proficient": false,
           "expertise": false,
           "advantage": false,
@@ -285,6 +305,7 @@
           "extraModifier": 0
         },
         "insight": {
+          "skillName": "Insight",
           "proficient": false,
           "expertise": false,
           "advantage": false,
@@ -292,6 +313,7 @@
           "extraModifier": 0
         },
         "nature": {
+          "skillName": "Nature",
           "proficient": false,
           "expertise": false,
           "advantage": false,
@@ -299,6 +321,7 @@
           "extraModifier": 0
         },
         "perception": {
+          "skillName": "Perception",
           "proficient": false,
           "expertise": false,
           "advantage": false,
@@ -306,6 +329,7 @@
           "extraModifier": 0
         },
         "survival": {
+          "skillName": "Survival",
           "proficient": false,
           "expertise": false,
           "advantage": false,
@@ -314,8 +338,10 @@
         }
       },
       "charisma": {
-        "abilityScore": "",
+        "abilityName": "Charisma",
+        "abilityScore": "13",
         "savingThrow": {
+          "skillName": "Cha. Saving Throw",
           "proficient": false,
           "expertise": false,
           "advantage": false,
@@ -323,6 +349,7 @@
           "extraModifier": 0
         },
         "deception": {
+          "skillName": "Deception",
           "proficient": false,
           "expertise": false,
           "advantage": false,
@@ -330,6 +357,7 @@
           "extraModifier": 0
         },
         "intimidation": {
+          "skillName": "Intimidation",
           "proficient": false,
           "expertise": false,
           "advantage": false,
@@ -337,6 +365,7 @@
           "extraModifier": 0
         },
         "performance": {
+          "skillName": "Performance",
           "proficient": false,
           "expertise": false,
           "advantage": false,
@@ -344,6 +373,7 @@
           "extraModifier": 0
         },
         "persuasion": {
+          "skillName": "Persuasion",
           "proficient": false,
           "expertise": false,
           "advantage": false,

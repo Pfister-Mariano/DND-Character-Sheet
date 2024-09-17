@@ -50,6 +50,7 @@
     --colorBG1: #171717;
     --colorBG2: #27272a;
     --colorBG3: #3f3f46;
+    --colorBG4: #79737a;
     --colorBlueDark: #0e7490;
     --colorBlueLight: #06b6d4;
     --colorAdvantage: #22c55e;
@@ -75,11 +76,15 @@
     box-sizing: border-box;
     position: relative;
     line-height: 1.3em;
+    scrollbar-width: thin;
+    scrollbar-color: var(--colorBG4) transparent;
 }
 
 body {
     background-color: var(--colorBG1);
     color: var(--colorWhite);
+    height: calc(100vh - 40px - 5rem);
+    padding: 2rem;
 }
 
 input,
@@ -100,7 +105,7 @@ input[type="number"] {
 h1 {
     font-size: 3rem;
     font-weight: 600;
-    margin: 0.5em 0;
+    margin-bottom: 0.5em;
 }
 h2 {
     font-size: 2.25rem;
@@ -122,9 +127,12 @@ h6 {
     font-weight: 600;
 }
 
+#app,
 .tab,
-.tabContent {
+.tabContent,
+main {
     width: 100%;
+    height: 100%;
 }
 
 .tabTrigger,
@@ -217,7 +225,8 @@ h6 {
     }
 }
 .tabContent {
-    margin-top: 60px;
+    padding-top: 60px;
+    margin: 0;
     .viewGridSettings {
         background-color: var(--colorBG2);
         padding: 5px 10px;

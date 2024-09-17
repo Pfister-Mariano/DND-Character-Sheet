@@ -22,7 +22,7 @@
                     <input type="text" v-model="characterData.character.background" @input="saveCharacterData">
                 </div>
                 <div class="infoProfBonus"><span>Prof Bonus: </span>
-                    <input type="text" v-model="characterData.character.proficiencyBonus" @input="saveCharacterData">
+                    <input type="number" v-model="characterData.character.proficiencyBonus" @input="saveCharacterData">
                 </div>
             </div>
             <div class="settings" :class="{ 'active': editViewGrid }" @click="editView">
@@ -58,14 +58,14 @@
         </TabsContent>
     </Tabs>
 
-    <button @click="saveCharacterData">SAVE Character Sheet</button>
+    <!-- <button @click="saveCharacterData">SAVE Character Sheet</button>
     <br>
     <br>
     <br>
     <pre>{{ fileList }}</pre>
     <pre>
         {{ characterData }}
-    </pre>
+    </pre> -->
 </template>
 
 <script setup>
