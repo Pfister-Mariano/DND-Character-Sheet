@@ -170,8 +170,8 @@
         "abilityScore": "20",
         "savingThrow": {
           "skillName": "Str. Saving Throw",
-          "proficient": true,
-          "expertise": false,
+          "proficient": false,
+          "expertise": true,
           "advantage": false,
           "disadvantage": false,
           "extraModifier": 0
@@ -383,19 +383,21 @@
       }
     },
     "health": {
-      "maxHP": "",
-      "currentHP": "",
-      "tempHP": ""
+      "maxHP": 80,
+      "currentHP": "62",
+      "tempHP": "",
+      "hitDice": 8,
+      "hitDiceAmount": "3"
     },
-    "ac": "",
+    "ac": "21",
     "initiative": "",
     "sanity": "",
     "exhaustion": "",
     "speed": {
-      "walking": "",
-      "climbing": "",
+      "walking": 30,
+      "climbing": "0",
       "swimming": "",
-      "fly": ""
+      "fly": 0
     },
     "spellcasting": {
       "castingSkill": "",

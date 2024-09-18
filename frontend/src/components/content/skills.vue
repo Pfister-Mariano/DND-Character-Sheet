@@ -7,7 +7,7 @@
                         <h3 v-if="skill.abilityScore > 11">+{{ Math.floor((skill.abilityScore - 10) / 2) }}</h3>
                         <h3 v-else>{{ Math.floor((skill.abilityScore - 10) / 2) }}</h3>
                     </div>
-                    <input class="score" v-model="skill.abilityScore"></input>
+                    <input class="score" v-model="skill.abilityScore" type="number" @input="updateCharacterData"></input>
                 </div>
                 <h2>
                     {{ skill.abilityName }}
@@ -16,8 +16,9 @@
             <div class="skillList">
                 <div class="skill" v-for="(ability, abilityIndex) in Object.entries(skill).slice(2)">
                     <Toggle :class="'proficiencyButton'" :defaultValue="ability[1].proficient"
-                        @click="ability[1].proficient = !ability[1].proficient"></Toggle>
-                    <Toggle :class="'proficiencyButton'"  :defaultValue="ability[1].expertise" @click="ability[1].expertise = !ability[1].expertise"></Toggle>
+                    @click="toggleProficiency(ability)"></Toggle>
+                    <Toggle :class="'proficiencyButton'"  :defaultValue="ability[1].expertise" 
+                    @click="toggleExpertise(ability)"></Toggle>
                     <input type="text" v-model="ability[1].skillName">
                     <div class="multiRoll">
                         <div class="multiRollIndicator" :class="{ active: ability[1].disadvantage }" @click="ability[1].disadvantage = !ability[1].disadvantage">
@@ -65,9 +66,19 @@ watch(localCharacter, (newVal) => {
 
 const emit = defineEmits(['update:characterData']);
 
-function updateCharacterData(event) {
-    const newSize = Number(event.target.value);
-    emit('update:characterData', newSize);
+function updateCharacterData() {
+    // const newSize = Number(event.target.value);    
+    emit('update:characterData');
+}
+
+function toggleProficiency(ability) {
+    ability[1].proficient = !ability[1].proficient;
+    updateCharacterData();
+}
+
+function toggleExpertise(ability) {
+    ability[1].expertise = !ability[1].expertise;
+    updateCharacterData();
 }
 
 </script>
@@ -163,6 +174,7 @@ function updateCharacterData(event) {
             > input{
                 flex-grow: 1;
                 padding-left: 5px;
+                width: 80px;
             }
             .multiRoll{
                 display: flex;

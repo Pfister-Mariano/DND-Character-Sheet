@@ -115,17 +115,18 @@ onMounted(async () => {
 
 function updateViewContent(index, itemIndex, key, value) {
     characterData.value.views[index].contents[itemIndex][key] = value;
-    // saveData(filename);
+    saveData(filename);
 }
 
 function updateGridView(index, itemIndex, key, value) {
     characterData.value.views[index][key] = value;
-    // saveData(filename);
+    saveData(filename);
 }
 
 function updateCharacterData(index, itemIndex, key, value) {
     characterData.character = value;
-    // saveData(filename);
+    console.log('UPDATED CHARACTER');
+    saveData(filename);
 }
 
 function saveCharacterData() {
