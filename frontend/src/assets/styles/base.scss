@@ -296,3 +296,34 @@ main {
         }
     }
 }
+
+.defaultContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    > .innerContainer {
+        background-color: var(--colorBG3);
+        border-radius: 3px;
+        padding: 5px 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+        span {
+            display: block;
+            font-weight: 600;
+            color: var(--colorBlueLight);
+            padding-right: 0.75ch;
+            flex-shrink: 0;
+        }
+        input {
+            font-weight: 400;
+            width: 2ch;
+            padding-right: 0.5ch;
+        }
+        > div {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+        }
+    }
+}

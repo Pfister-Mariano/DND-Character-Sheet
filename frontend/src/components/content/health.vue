@@ -1,17 +1,17 @@
 <template>
-    <div class="healthWrapper">
-        <div class="healthContainer">
+    <div class="defaultContainer">
+        <div class="innerContainer healthContainer">
             <div>
                 <span>HP:</span> <input class="alignRight" type="text" v-model="localCharacter.health.currentHP" @input="updateCharacterData"> / <input type="text" v-model="localCharacter.health.maxHP" @input="updateCharacterData">
             </div>
             <div>
-                <span>Temp:</span> <input type="text" v-model="localCharacter.health.tempHP">
+                <span>Temp:</span> <input class="alignRight" type="text" v-model="localCharacter.health.tempHP">
             </div>
             <div>
                 <span>Hit-Dice:</span> <input class="alignRight" type="text" maxlength="2" v-model="localCharacter.health.hitDiceAmount" @input="updateCharacterData">D<input type="text" maxlength="2" v-model="localCharacter.health.hitDice" @input="updateCharacterData">
             </div>
         </div>
-        <div class="acContainer">
+        <div class="innerContainer acContainer">
             <div>
                 <span>AC:</span> <input type="text" maxlength="2" v-model="localCharacter.ac" @input="updateCharacterData">
             </div>
@@ -19,7 +19,7 @@
                 <span>Initiative:</span> <input type="text" maxlength="2" v-model="localCharacter.initiative" @input="updateCharacterData">
             </div>
         </div>
-        <div class="sanityContainer">
+        <div class="innerContainer sanityContainer">
             <div>
                 <span>Sanity:</span> <input type="text" maxlength="2" v-model="localCharacter.sanity" @input="updateCharacterData">
             </div>
@@ -27,18 +27,28 @@
                 <span>Exhaustion:</span> <input type="text" maxlength="2" v-model="localCharacter.exhaustion" @input="updateCharacterData">
             </div>
         </div>
-        <div class="speedContainer">
+        <div class="innerContainer speedContainer">
             <div>
-                <span>Walking:</span> <input class="alignRight" type="text" v-model="localCharacter.speed.walking" @input="updateCharacterData"> Feet
+                <span>Walking:</span>
+                <div>
+                    <input class="alignRight" type="text" v-model="localCharacter.speed.walking" @input="updateCharacterData"> Feet
+                </div>
             </div>
             <div>
-                <span>Climbing:</span> <input class="alignRight" type="text" v-model="localCharacter.speed.climbing" @input="updateCharacterData"> Feet
+                <span>Climbing:</span>
+                <div>
+                    <input class="alignRight" type="text" v-model="localCharacter.speed.climbing" @input="updateCharacterData"> Feet
+                </div>
             </div>
             <div>
-                <span>Swimming:</span> <input class="alignRight" type="text" v-model="localCharacter.speed.swimming" @input="updateCharacterData"> Feet
+                <span>Swimming:</span> 
+                <input class="alignRight" type="text" v-model="localCharacter.speed.swimming" @input="updateCharacterData"> Feet
             </div>
             <div>
-                <span>Fly:</span> <input class="alignRight" type="text" v-model="localCharacter.speed.fly" @input="updateCharacterData"> Feet
+                <span>Fly:</span> 
+                <div>
+                    <input class="alignRight" type="text" v-model="localCharacter.speed.fly" @input="updateCharacterData"> Feet
+                </div>
             </div>
         </div>
     </div>
@@ -70,47 +80,46 @@ function updateCharacterData() {
 </script>
 
 <style scoped lang="scss">
-    .healthWrapper{
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        > div{
-            background-color: var(--colorBG3);
-            border-radius: 3px;
-            padding: 5px 10px;
-            display: flex;
-            flex-direction: column;
-            gap: 3px;
-            span{
-                display: block;
-                font-weight: 600;
-                color: var(--colorBlueLight);
-                padding-right: .75ch;
-                flex-shrink: 0;
-            }
-            input{
-                font-weight: 400;
-                width: 2ch;
-                padding-right: .5ch;
-            }
-            >div{
-                display: flex;
-                flex-direction: row;
-                flex-wrap: nowrap;
-            }
+    .defaultContainer{
+        > .innerContainer input{
+            width: 3ch;
         }
         input.alignRight {
             text-align: right;
         }
-        .speedContainer input{
-            width: 3ch;
+        .sanityContainer,
+        .acContainer{
+            > div{
+                >span{
+                    width: 85px;
+                }
+            }
         }
-        .healthContainer > div:nth-child(1) input:nth-child(3){
-            padding-left: .5ch;
-            padding-right: 0;
+        .speedContainer {
+            > div{
+                justify-content: space-between;
+            }
+            input{
+                width: 3ch;
+            }
         }
-        .healthContainer > div:nth-child(3) input:nth-child(2){
-            padding-right: 0;
+        .healthContainer{
+            > div > span{
+                width: 70px;
+            }
+            > div > input{
+                padding: 0;
+            }
+            > div:nth-child(1){
+                
+                > input:nth-child(2){
+                    padding-right: .5ch;
+                }
+                > input:nth-child(3){
+                    padding-left: .5ch;
+                    padding-right: 0;
+                }
+            }
         }
     }
 </style>

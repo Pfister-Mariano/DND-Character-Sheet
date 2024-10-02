@@ -4,15 +4,15 @@
       "name": "Character",
       "id": "character",
       "sortable": [
-        "3yx",
-        "35y",
-        "356",
+        "9bz",
+        "a7g",
         "3cy",
         "364",
         "3jr",
-        "3i5",
+        "37z",
+        "3yx",
         "3be",
-        "37z"
+        "67t"
       ],
       "gridRows": 9,
       "gridColumns": 16,
@@ -385,26 +385,26 @@
     "health": {
       "maxHP": 80,
       "currentHP": "62",
-      "tempHP": "",
+      "tempHP": "23",
       "hitDice": 8,
       "hitDiceAmount": "3"
     },
     "ac": "21",
-    "initiative": "",
-    "sanity": "",
-    "exhaustion": "",
+    "initiative": "22",
+    "sanity": "0",
+    "exhaustion": "0",
     "speed": {
-      "walking": 30,
+      "walking": "30",
       "climbing": "0",
       "swimming": "",
       "fly": 0
     },
     "spellcasting": {
-      "castingSkill": "",
-      "currentMana": "",
-      "maxMana": "",
-      "spellAtkBonus": "",
-      "spellSaveDC": ""
+      "castingSkill": "Intelligence",
+      "currentMana": 999,
+      "maxMana": 231,
+      "spellAtkBonus": 7,
+      "spellSaveDC": 15
     },
     "resistances": [
       "",
@@ -422,9 +422,11 @@
       "",
       ""
     ],
-    "passiveAbilities": {
-      "": ""
-    },
+    "passiveAbilities": [
+      "",
+      "",
+      ""
+    ],
     "wealth": {
       "platinum": 0,
       "gold": 0,
