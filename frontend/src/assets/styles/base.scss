@@ -309,7 +309,7 @@ main {
         flex-direction: column;
         gap: 3px;
         span {
-            display: block;
+            display: inline-block;
             font-weight: 600;
             color: var(--colorBlueLight);
             padding-right: 0.75ch;

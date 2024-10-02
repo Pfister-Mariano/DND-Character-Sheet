@@ -173,7 +173,7 @@
           "proficient": false,
           "expertise": true,
           "advantage": false,
-          "disadvantage": false,
+          "disadvantage": true,
           "extraModifier": 0
         },
         "athletics": {
@@ -192,7 +192,7 @@
           "skillName": "Dex. Saving Throw",
           "proficient": false,
           "expertise": false,
-          "advantage": false,
+          "advantage": true,
           "disadvantage": false,
           "extraModifier": 0
         },
@@ -403,24 +403,23 @@
       "castingSkill": "Intelligence",
       "currentMana": 999,
       "maxMana": 231,
-      "spellAtkBonus": 7,
+      "spellAtkBonus": 6,
       "spellSaveDC": 15
     },
     "resistances": [
-      "",
-      ""
+      "Bludgeoning"
     ],
     "immunities": [
-      "",
-      ""
-    ],
-    "conditionImmunities": [
-      "",
-      ""
+      "Thunder",
+      "Fire",
+      "Acid"
     ],
     "vulnerability": [
-      "",
-      ""
+      "Lightning"
+    ],
+    "conditionImmunities": [
+      "Poisoned",
+      "Charmed"
     ],
     "passiveAbilities": [
       "",

@@ -140,51 +140,51 @@ watch(characterData, (newValue, oldValue) => {
         holderId : 'characterName',
     }); */
 })
-let sortable;
+// let sortable;
 
-function addDragAndDrop() {
-        let el = document.querySelector('main')
-        sortable = new Sortable(el, {
-            swapThreshold: 0.10,
-            animation: 150,
-            disabled: true,
-            store: {
-                /**
-                 * Get the order of elements. Called once during initialization.
-                 * @param   {Sortable}  sortable
-                 * @returns {Array}
-                 */
-                get: function (sortable) {
-                    // var order = localStorage.getItem(sortable.options.group.name);
-                    let stripedTab = currentTab.value.slice(4);
-                    var order = characterData.value.views[stripedTab].sortable
+// function addDragAndDrop() {
+//         let el = document.querySelector('main')
+//         sortable = new Sortable(el, {
+//             swapThreshold: 0.10,
+//             animation: 150,
+//             disabled: true,
+//             store: {
+//                 /**
+//                  * Get the order of elements. Called once during initialization.
+//                  * @param   {Sortable}  sortable
+//                  * @returns {Array}
+//                  */
+//                 get: function (sortable) {
+//                     // var order = localStorage.getItem(sortable.options.group.name);
+//                     let stripedTab = currentTab.value.slice(4);
+//                     var order = characterData.value.views[stripedTab].sortable
 
-                    return order ? order : [];
-                },
-                /**
-                 * Save the order of elements. Called onEnd (when the item is dropped).
-                 * @param {Sortable}  sortable
-                 */
-                set: function (sortable) {
-                    var order = sortable.toArray();
-                    // localStorage.setItem(sortable.options.group.name, order.join('|'));
+//                     return order ? order : [];
+//                 },
+//                 /**
+//                  * Save the order of elements. Called onEnd (when the item is dropped).
+//                  * @param {Sortable}  sortable
+//                  */
+//                 set: function (sortable) {
+//                     var order = sortable.toArray();
+//                     // localStorage.setItem(sortable.options.group.name, order.join('|'));
 
-                    let stripedTab = currentTab.value.slice(4);
-                    characterData.value.views[stripedTab].sortable = order;
+//                     let stripedTab = currentTab.value.slice(4);
+//                     characterData.value.views[stripedTab].sortable = order;
 
-                }
-            }
-        });
-}
+//                 }
+//             }
+//         });
+// }
 
-watch(currentTab, (newTab, oldTab) => {
-    nextTick(() => {
-        addDragAndDrop()
-        currentTab.value = newTab;
-        // let stripedTab = currentTab.value.slice(4);
-        // console.log(characterData.value.views[stripedTab].sortable);
-    });
-});
+// watch(currentTab, (newTab, oldTab) => {
+//     nextTick(() => {
+//         addDragAndDrop()
+//         currentTab.value = newTab;
+//         // let stripedTab = currentTab.value.slice(4);
+//         // console.log(characterData.value.views[stripedTab].sortable);
+//     });
+// });
 
 function editView(){
     editViewGrid.value = !editViewGrid.value;
