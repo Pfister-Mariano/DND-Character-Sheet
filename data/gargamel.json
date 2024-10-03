@@ -180,7 +180,7 @@
           "skillName": "Athletics",
           "proficient": true,
           "expertise": true,
-          "advantage": false,
+          "advantage": true,
           "disadvantage": false,
           "extraModifier": 0
         }
@@ -286,10 +286,10 @@
         }
       },
       "wisdom": {
-        "abilityName": "Wisodm",
+        "abilityName": "Wisdom",
         "abilityScore": "14",
         "savingThrow": {
-          "skillName": "",
+          "skillName": "Wis. Saving Throw",
           "proficient": false,
           "expertise": false,
           "advantage": false,
@@ -427,71 +427,150 @@
       ""
     ],
     "wealth": {
-      "platinum": 0,
-      "gold": 0,
-      "silver": 0,
-      "copper": 0
+      "platinum": "81",
+      "gold": 2,
+      "silver": 3,
+      "copper": 4
     },
     "rations": {
-      "wealthy": 0,
-      "comfortable": 0,
-      "whack": 0
+      "wealthy": 1,
+      "comfortable": 2,
+      "whack": 3
     },
     "sanityGain": [
-      "",
-      "",
+      "1234\nqwerqwer\nqwer\nqwer\nerqwerqwer\neqewrq",
+      "345",
       ""
     ],
     "sanityLoss": [
-      "",
-      "",
-      ""
+      "qwerqwer",
+      "345",
+      "567",
+      "rqwerqwreqw"
     ],
     "proficiencies": {
       "weapons": [
-        "",
+        "qwerqwer",
+        "qwerqwer",
         ""
       ],
       "armor": [
         "",
-        ""
-      ],
-      "tools": [
+        "",
         "",
         ""
       ],
+      "tools": [
+        "qewrqwer\neqewrqwer",
+        ""
+      ],
       "languages": [
+        "",
         "",
         ""
       ]
     },
     "inventory": {
-      "weapons": {
-        "": ""
-      },
-      "cloths": {
-        "helmet": "",
-        "armor": "",
-        "shield": "",
-        "cloths": "",
-        "shoes": ""
-      },
+      "weapons": [
+        {
+          "title": "Back",
+          "name": "GGGGGqq\nqewrqwer\nqweqwer\nqwerqewrq\nqerqwer"
+        },
+        {
+          "title": "Left",
+          "name": "EEE\nqwer\nqwer"
+        },
+        {
+          "title": "Right",
+          "name": "FFFF"
+        },
+        {
+          "title": "Test",
+          "name": "uuuu"
+        }
+      ],
+      "cloths": [
+        {
+          "title": "Helm",
+          "name": "ghjcvbxttz\nretwrtwert"
+        },
+        {
+          "title": "Armor",
+          "name": "klhklgjhjk"
+        },
+        {
+          "title": "",
+          "name": ""
+        }
+      ],
       "accessories": [
-        "",
-        ""
+        {
+          "title": "2",
+          "name": "rwrewrwrwr"
+        },
+        {
+          "title": "1",
+          "name": "erwfg"
+        }
       ],
       "backpack": [
-        "",
-        "",
-        ""
+        {
+          "title": "",
+          "name": "qwer"
+        },
+        {
+          "title": "",
+          "name": "q"
+        },
+        {
+          "title": "",
+          "name": "werqwer"
+        },
+        {
+          "title": "",
+          "name": "rqwerrq"
+        },
+        {
+          "title": "",
+          "name": "qwe"
+        },
+        {
+          "title": "",
+          "name": ""
+        },
+        {
+          "title": "",
+          "name": ""
+        },
+        {
+          "title": "",
+          "name": ""
+        },
+        {
+          "title": "",
+          "name": ""
+        }
       ]
     },
     "abilities": [
       {
-        "name": "",
-        "useTime": "",
-        "description": "",
-        "levelRequirement": ""
+        "name": "abilities-1",
+        "useTime": "Action",
+        "levelRequirement": "3",
+        "description": "XXX",
+        "origin": "Class"
+      },
+      {
+        "name": "abilities-2",
+        "useTime": "reaction",
+        "levelRequirement": "2",
+        "description": "XXXXXXX"
+      },
+      {
+        "name": "abilities-4",
+        "useTime": "passive",
+        "levelRequirement": "3",
+        "description": "XXXXXXXXXXXXXX"
       }
     ],
     "spells": [
