@@ -1,6 +1,21 @@
 <template>
     <div class="defaultContainer">
-        <div class="innerContainer" v-if="localCharacter.resistances.length > 0">
+        <div class="innerContainer">
+            <div>
+                <div class="passiveController">
+                    <div class="removePassive" @click="removeFromPassive('otherPassives')">-</div>
+                    <div class="addPassive" @click="addFromPassive('otherPassives'); updateCharacterData">+</div>
+                </div>
+                <span>Passive:</span>
+                <ul>
+                    <li v-for="(passive, index) in localCharacter.otherPassives">
+                        <input class="alignRight" type="text" v-model="localCharacter.otherPassives[index]"
+                            @input="updateCharacterData">
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="innerContainer">
             <div>
                 <div class="passiveController">
                     <div class="removePassive" @click="removeFromPassive('resistances')">-</div>
@@ -15,7 +30,7 @@
                 </ul>
             </div>
         </div>
-        <div class="innerContainer" v-if="localCharacter.immunities.length > 0">
+        <div class="innerContainer">
             <div>
                 <div class="passiveController">
                     <div class="removePassive" @click="removeFromPassive('immunities')">-</div>
@@ -30,7 +45,7 @@
                 </ul>
             </div>
         </div>
-        <div class="innerContainer" v-if="localCharacter.vulnerability.length > 0">
+        <div class="innerContainer">
             <div>
                 <div class="passiveController">
                     <div class="removePassive" @click="removeFromPassive('vulnerability')">-</div>
@@ -45,7 +60,7 @@
                 </ul>
             </div>
         </div>
-        <div class="innerContainer" v-if="localCharacter.conditionImmunities.length > 0">
+        <div class="innerContainer">
             <div>
                 <div class="passiveController">
                     <div class="removePassive" @click="removeFromPassive('conditionImmunities')">-</div>
@@ -95,6 +110,8 @@ function removeFromPassive(removingArray) {
         localCharacter.value.vulnerability.pop()
     } else if (removingArray === 'conditionImmunities') {
         localCharacter.value.conditionImmunities.pop()
+    } else if (removingArray === 'otherPassives') {
+        localCharacter.value.otherPassives.pop()
     }
     
     emit('update:characterData')
@@ -108,6 +125,8 @@ function addFromPassive(addArray) {
         localCharacter.value.vulnerability.push('')
     } else if (addArray === 'conditionImmunities') {
         localCharacter.value.conditionImmunities.push('')
+    } else if (addArray === 'otherPassives') {
+        localCharacter.value.otherPassives.push('')
     }
     
     emit('update:characterData')

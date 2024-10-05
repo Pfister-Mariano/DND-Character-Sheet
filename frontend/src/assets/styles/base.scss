@@ -308,12 +308,19 @@ main {
         display: flex;
         flex-direction: column;
         gap: 3px;
-        span {
+        span{
             display: inline-block;
             font-weight: 600;
             color: var(--colorBlueLight);
             padding-right: 0.75ch;
             flex-shrink: 0;
+        }
+        .ck-content span{
+            display: inline;
+            color: var(--colorWhite);
+            font-weight: normal;
+            padding: unset;
+
         }
         input {
             font-weight: 400;
@@ -365,5 +372,24 @@ main {
         input:focus {
             outline: none;
         }
+    }
+}
+
+.ck-content ul{
+    padding-left: 30px;
+    margin: .5rem 0;
+    &:not(.todo-list) li{
+        padding-left: 10px;
+    }
+    &.todo-list{
+        padding-left: 40px;
+        
+    }
+}
+.ck-content ol{
+    padding-left: 30px;
+    margin: .5rem 0;
+    li{
+        padding-left: 10px;
     }
 }

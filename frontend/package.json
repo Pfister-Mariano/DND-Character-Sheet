@@ -9,10 +9,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@ckeditor/ckeditor5-build-balloon": "^43.2.0",
+    "@ckeditor/ckeditor5-vue": "^7.2.0",
     "@editorjs/editorjs": "^2.30.6",
     "@editorjs/header": "^2.8.7",
     "@editorjs/list": "^1.10.0",
     "axios": "^1.7.7",
+    "ckeditor5": "^43.2.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "lucide-vue-next": "^0.439.0",

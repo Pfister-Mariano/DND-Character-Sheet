@@ -1,5 +1,5 @@
 <template>
-    <h1 v-if="characterData.character">{{ characterData.character.characterName }}</h1>
+    <h1 v-if="characterData.character">{{ characterData.character.characterName }}</h1>    
     <Tabs default-value="tab-characterView" class="tab" :class="{ 'editViewGrid': editViewGrid }" v-if="characterData.character" v-model="currentTab">
         <div class="tabWrapper">
             <TabsList class="tabList">
@@ -8,7 +8,6 @@
                 </TabsTrigger>
             </TabsList>
             <div class="generalInfo">
-                <!-- <div><span>Name:</span> {{ characterData.character.characterName }}</div> -->
                 <div class="infoLevel" ><span>LVL: </span> 
                     <input type="text" v-model="characterData.character.level" @input="saveCharacterData">
                 </div>
@@ -57,15 +56,6 @@
             </viewGrid>
         </TabsContent>
     </Tabs>
-
-    <!-- <button @click="saveCharacterData">SAVE Character Sheet</button>
-    <br>
-    <br>
-    <br>
-    <pre>{{ fileList }}</pre>
-    <pre>
-        {{ characterData }}
-    </pre> -->
 </template>
 
 <script setup>
@@ -86,7 +76,6 @@ import {
     TabsTrigger,
 } from '@/components/ui/tabs';
 
-// import EditorJS from '@editorjs/editorjs';
 import Sortable from 'sortablejs';
 
 const { data, loadData } = fetchData();

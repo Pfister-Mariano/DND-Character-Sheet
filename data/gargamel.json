@@ -20,7 +20,7 @@
         {
           "type": "Skills",
           "row": 9,
-          "columns": 4
+          "columns": 3
         },
         {
           "type": "Health",
@@ -35,12 +35,12 @@
         {
           "type": "Sanity",
           "row": 2,
-          "columns": 5
+          "columns": 6
         },
         {
           "type": "Proficiencies",
-          "row": 3,
-          "columns": 5
+          "row": 2,
+          "columns": 6
         },
         {
           "type": "Spellcasting",
@@ -49,8 +49,8 @@
         },
         {
           "type": "Abilities",
-          "row": 4,
-          "columns": 5
+          "row": 5,
+          "columns": 6
         },
         {
           "type": "Passive",
@@ -406,21 +406,11 @@
       "spellAtkBonus": 6,
       "spellSaveDC": 15
     },
-    "resistances": [
-      "Bludgeoning"
-    ],
-    "immunities": [
-      "Thunder",
-      "Fire",
-      "Acid"
-    ],
-    "vulnerability": [
-      "Lightning"
-    ],
-    "conditionImmunities": [
-      "Poisoned",
-      "Charmed"
-    ],
+    "resistances": [],
+    "immunities": [],
+    "vulnerability": [],
+    "conditionImmunities": [],
+    "otherPassives": [],
     "passiveAbilities": [
       "",
       "",
@@ -438,9 +428,9 @@
       "whack": 3
     },
     "sanityGain": [
-      "1234\nqwerqwer\nqwer\nqwer\nerqwerqwer\neqewrq",
-      "345",
-      ""
+      "qwer\nerqwerqwer\neqewrq",
+      "1341",
+      "5675"
     ],
     "sanityLoss": [
       "qwerqwer",
@@ -456,16 +446,13 @@
       ],
       "armor": [
         "",
-        "",
-        "",
         ""
       ],
       "tools": [
-        "qewrqwer\neqewrqwer",
+        "qewrqwer",
         ""
       ],
       "languages": [
-        "",
         "",
         ""
       ]
@@ -487,6 +474,10 @@
         {
           "title": "Test",
           "name": "uuuu"
+        },
+        {
+          "title": "",
+          "name": ""
         }
       ],
       "cloths": [
@@ -556,21 +547,41 @@
       {
         "name": "abilities-1",
         "useTime": "Action",
-        "levelRequirement": "3",
-        "description": "XXX",
-        "origin": "Class"
+        "levelRequirement": "FEAT",
+        "description": "<p>qewrqwerqwer</p>",
+        "origin": "Class",
+        "order": "0"
       },
       {
         "name": "abilities-2",
         "useTime": "reaction",
-        "levelRequirement": "2",
-        "description": "XXXXXXX"
+        "levelRequirement": "ITEM",
+        "description": "<p>XXXXXXX</p><p>qwer</p><p>qwer</p><p>wqer</p><p>weq</p><p>r</p><p>qwer</p><p>&nbsp;</p><p>qwer</p>",
+        "order": "30"
       },
       {
         "name": "abilities-4",
         "useTime": "passive",
-        "levelRequirement": "3",
-        "description": "XXXXXXXXXXXXXX"
+        "levelRequirement": "RACE",
+        "description": "<p>XXXXXXXXXXXXXX</p><ul><li>qewrqwer</li><li>qwer</li><li>qwer</li><li>qwer</li><li>qwer</li></ul><p>qerqwerqwerqwer</p><p>qwerqwerqwer</p>",
+        "origin": "Class",
+        "order": "20"
+      },
+      {
+        "name": "abilities-5",
+        "useTime": "passive",
+        "levelRequirement": "OTHER",
+        "description": "<p>XXXXXXXXXXXXXX</p><ul><li>qewrqwer</li><li>qwer</li><li>qwer</li><li>qwer</li><li>qwer</li></ul><p>qerqwerqwerqwer</p><p>qwerqwerqwer</p>",
+        "origin": "Class",
+        "order": "50"
+      },
+      {
+        "name": "Ability 6",
+        "useTime": "",
+        "levelRequirement": "",
+        "description": "<p>XXXXXXXXXXXXXX</p><ul><li>qe</li></ul>",
+        "origin": "",
+        "order": "120"
       }
     ],
     "spells": [
