@@ -73,7 +73,6 @@ export default defineComponent({
         },
         editorIndex: {
             type: Number,
-            required: true,
             default: ''
         }
     },
@@ -140,7 +139,7 @@ export default defineComponent({
 				TableCellProperties,
 				TableColumnResize,
 				TableProperties,
-				// TableToolbar,
+				TableToolbar,
 				TextTransformation,
 				TodoList,
 				Underline,

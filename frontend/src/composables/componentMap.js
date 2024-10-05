@@ -6,15 +6,21 @@ import Proficiencies from '../components/content/proficiencies.vue';
 import Sanity from '../components/content/sanity.vue';
 import Skills from '../components/content/skills.vue';
 import Spellcasting from '../components/content/spellcasting.vue';
+import Notes from '../components/content/notes.vue';
+import AbilitiesBattle from '../components/content/abilitiesBattle.vue';
+import AbilitiesSpellcasting from '../components/content/abilitiesSpellcasting.vue';
 
 const componentMap = {
     Abilities,
+    AbilitiesBattle,
+    AbilitiesSpellcasting,
     Health,
     Inventory,
     Passive,
     Proficiencies,
     Sanity,
     Skills,
+    Notes,
     Spellcasting
 };
 

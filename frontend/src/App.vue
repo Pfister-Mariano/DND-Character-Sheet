@@ -50,7 +50,11 @@
                         :key="itemIndex"
                         :is="componentMap[item.type]"
                         :characterData="characterData.character"
+                        :tabViewIndex="itemIndex"
+                        :tabViewContent="view"
+                        :tabViewType="index"
                         @update:characterData="(value) => updateCharacterData(index, itemIndex, 'row', value)"
+                        @update:viewData="(value) => updateViewData(index, itemIndex, 'row', value, viewType)"
                     />
                 </gridContainer>
             </viewGrid>
@@ -118,6 +122,12 @@ function updateCharacterData(index, itemIndex, key, value) {
     saveData(filename);
 }
 
+function updateViewData(index, itemIndex, key, value, viewType) {
+    characterData.value.views[index] = value
+    console.log('UPDATED VIEW');
+    saveData(filename);
+}
+
 function saveCharacterData() {
     data.value = characterData.value;
     saveData(filename);
@@ -180,17 +190,6 @@ function editView(){
     var state = sortable.option("disabled"); // get
     sortable.option("disabled", !state); // set
 }
-
-/************************************** */
-// function addTestComp() {
-//     let addedStats =    {
-//         "type": "Spellcasting",
-//         "row": 7,
-//         "columns": 2
-//     }     
-//     characterData.value.views['characterView'].contents.push(addedStats)
-// }
-/************************************** */
 
 </script>
 

@@ -17,42 +17,46 @@
 import { ref, onMounted, defineComponent, watch, defineEmits } from 'vue';
 import * as CKEditor from '@ckeditor/ckeditor5-vue';
 import {
-    BalloonEditor,
-    AccessibilityHelp,
-    Autoformat,
-    AutoLink,
-    Autosave,
-    BlockQuote,
-    BlockToolbar,
-    Bold,
-    Code,
-    CodeBlock,
-    Essentials,
-    FindAndReplace,
-    Heading,
+    InlineEditor,
+	AccessibilityHelp,
+	Autoformat,
+	AutoImage,
+	Autosave,
+	BalloonToolbar,
+	BlockQuote,
+	Bold,
+	CloudServices,
+	Essentials,
+	Heading,
     Highlight,
-    HorizontalLine,
-    Indent,
-    IndentBlock,
-    Italic,
-    Link,
-    List,
-    Paragraph,
-    SelectAll,
-    SpecialCharacters,
-    SpecialCharactersArrows,
-    SpecialCharactersCurrency,
-    SpecialCharactersEssentials,
-    SpecialCharactersLatin,
-    SpecialCharactersMathematical,
-    SpecialCharactersText,
-    Strikethrough,
-    Table,
-    TableToolbar,
-    TextTransformation,
-    TodoList,
-    Underline,
-    Undo
+	ImageBlock,
+	ImageCaption,
+	ImageInline,
+	ImageInsertViaUrl,
+	ImageResize,
+	ImageStyle,
+	ImageTextAlternative,
+	ImageToolbar,
+	ImageUpload,
+	Indent,
+	IndentBlock,
+	Italic,
+	Link,
+	LinkImage,
+	List,
+	ListProperties,
+	Paragraph,
+	SelectAll,
+	Table,
+	TableCaption,
+	TableCellProperties,
+	TableColumnResize,
+	TableProperties,
+	TableToolbar,
+	TextTransformation,
+	TodoList,
+	Underline,
+	Undo
 } from 'ckeditor5';
 
 import 'ckeditor5/ckeditor5.css';
@@ -70,14 +74,13 @@ export default defineComponent({
         },
         editorIndex: {
             type: Number,
-            required: true,
             default: ''
         }
     },
     setup(props, { emit }) {
         const isLayoutReady = ref(false);
         const content = ref(props.editorText);
-        const editor = BalloonEditor;
+        const editor = InlineEditor;
 
         const config = {
             toolbar: {
@@ -85,70 +88,67 @@ export default defineComponent({
                     'undo',
                     'redo',
                     '|',
-                    'findAndReplace',
-                    '|',
                     'heading',
-                    '|',
-                    'bulletedList',
-                    'numberedList',
-                    'todoList',
                     '|',
                     'bold',
                     'italic',
                     'underline',
-                    'strikethrough',
-                    'code',
                     '|',
-                    // 'specialCharacters',
-                    // 'horizontalLine',
                     'link',
                     'insertTable',
                     'highlight',
-                    // 'blockQuote',
+                    'blockQuote',
                     '|',
+                    'bulletedList',
+                    'numberedList',
+                    'todoList',
                     'outdent',
                     'indent'
                 ],
                 shouldNotGroupWhenFull: false
             },
             plugins: [
-                AccessibilityHelp,
-                Autoformat,
-                AutoLink,
-                Autosave,
-                BlockQuote,
-                BlockToolbar,
-                Bold,
-                Code,
-                CodeBlock,
-                Essentials,
-                FindAndReplace,
-                Heading,
+				AccessibilityHelp,
+				Autoformat,
+				AutoImage,
+				Autosave,
+				BalloonToolbar,
+				BlockQuote,
+				Bold,
                 Highlight,
-                HorizontalLine,
-                Indent,
-                IndentBlock,
-                Italic,
-                Link,
-                List,
-                Paragraph,
-                SelectAll,
-                SpecialCharacters,
-                SpecialCharactersArrows,
-                SpecialCharactersCurrency,
-                SpecialCharactersEssentials,
-                SpecialCharactersLatin,
-                SpecialCharactersMathematical,
-                SpecialCharactersText,
-                Strikethrough,
-                Table,
-                TableToolbar,
-                TextTransformation,
-                TodoList,
-                Underline,
-                Undo
-            ],
-            blockToolbar: ['bold', 'italic', '|', 'link', 'insertTable', '|', 'outdent', 'indent'],
+				CloudServices,
+				Essentials,
+				Heading,
+				ImageBlock,
+				ImageCaption,
+				ImageInline,
+				ImageInsertViaUrl,
+				ImageResize,
+				ImageStyle,
+				ImageTextAlternative,
+				// ImageToolbar,
+				ImageUpload,
+				Indent,
+				IndentBlock,
+				Italic,
+				Link,
+				LinkImage,
+				List,
+				ListProperties,
+				Paragraph,
+				SelectAll,
+				Table,
+				TableCaption,
+				TableCellProperties,
+				TableColumnResize,
+				TableProperties,
+				TableToolbar,
+				TextTransformation,
+				TodoList,
+				Underline,
+				Undo
+			],
+            // balloonToolbar: ['heading', 'bold', 'italic', '|', 'link', '|', 'bulletedList', 'numberedList'],
             heading: {
                 options: [
                     {
@@ -232,27 +232,12 @@ export default defineComponent({
     }
 }
 
-/* .ck-content * {
-    padding: initial;
-    margin: initial;
-    border: initial;
-    line-height: initial;
-    background-color: red !important;
-} */
-
-.ck-content ul,
-.ck-content ol {
-    padding-left: 40px;
-    margin: 1rem 0;
-    border: initial;
-    line-height: initial;
-}
-
 .main-container {
     font-family: 'Lato';
     width: fit-content;
     margin-left: auto;
     margin-right: auto;
+    width: 100%;
 }
 
 .ck-content {
@@ -260,13 +245,15 @@ export default defineComponent({
     line-height: 1.6;
     word-break: break-word;
 }
-
+/* 
 .editor-container_include-block-toolbar {
     margin-left: 42px;
+} */
+.editor-container_balloon-editor .editor-container__editor {
+    width: 100%;
+}
+.cke_inner {
+    display: none;
 }
 
-.editor-container_balloon-editor .editor-container__editor {
-    min-width: 795px;
-    max-width: 795px;
-}
 </style>
