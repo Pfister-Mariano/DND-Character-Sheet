@@ -1,0 +1,133 @@
+@font-face {
+    font-family: "Inter";
+    src: url("Inter-Regular.woff");
+    font-display: swap;
+    font-weight: 400;
+}
+@font-face {
+    font-family: "Inter";
+    src: url("Inter-SemiBold.woff");
+    font-display: swap;
+    font-weight: 600;
+}
+:root {
+    font-family: "Inter", Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    line-height: 1.3em;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+    position: relative;
+    line-height: 1.3em;
+}
+
+html {
+    background-color: #171717;
+    color: #fff;
+    font-weight: 400;
+    font-style: normal;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+section {
+    background-color: #27272a;
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 6px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+form {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5em;
+    color: #06b6d4;
+}
+label {
+    font-size: 1.3rem;
+    margin-bottom: 0.5em;
+    font-weight: 400;
+}
+input {
+    all: unset;
+    background-color: #3f3f46;
+    height: 30px;
+    border-radius: 3px;
+    width: 100%;
+    max-width: 300px;
+    margin: auto;
+}
+button {
+    all: unset;
+    background-color: #0e7490;
+    width: 100px;
+    margin: auto;
+    letter-spacing: 0.15em;
+    padding: 5px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+button:hover {
+    background-color: #06b6d4;
+}
+
+
+article{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+article section{
+    height: 200px;
+    width: 300px;
+    background-color: rgba(14, 116, 144, .4);
+    transition: all 0.2s;
+    cursor: pointer;
+    padding: 0;
+}
+article section:hover{
+    background-color: rgba(14, 116, 144, .8);
+}
+article section a{
+    all: unset;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.75rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: .15em;
+}
+article h1{
+    font-size: 3rem;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 40px;
+}
