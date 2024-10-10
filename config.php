@@ -8,4 +8,8 @@ define('SESSIONCOOKIE_NAME', md5('EIGENERNAME')); // eigener session name, wird 
 $isLoggedIn = false; 
 $hasError = false; // noch keine Fehler
 $errorMessages = array();
+
+$baseUrl = 'https://character-sheet.mariano-pfister.ch'; 
+$valid_username = 'Schnödögürügönggöng';
+$hashed_password = '$2y$10$3ZiAgXBw4IwFhjhbrS/jxem0CEnRdFIzhbZymWkwZ77QspMS2NwZu';
 ?>
